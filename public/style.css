@@ -1,0 +1,58 @@
+html {
+  cursor: url("images/cursor.png"), auto;
+}
+
+body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: monospace;
+}
+
+body > * {
+  padding: 5mm;
+}
+
+button {
+  font-family: monospace;
+}
+
+#whats_this {
+  padding: 1em;
+}
+
+#whats_this > * {
+  display: none;
+}
+
+#whats_this > p {
+  display: block;
+}
+
+#whats_this:hover > * {
+  display: block;
+}
+
+#whats_this:hover > img {
+  margin: auto;
+}
+
+#whats_this:hover > p {
+  display: none;
+}
+
+#text {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+}
+
+#text > p {
+  text-align: justify;
+}
