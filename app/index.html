@@ -6,18 +6,27 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Jquery -->
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <!-- Web3 -->
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.min.js"></script>
+    <!-- Result of Truffle Build -->
+    <script src="/app.js"></script>
     <h1>NFT Egg Hunt (proof of conept)</h1>
     <button type="button" id="whats_this">
       <p>What's This?</p>
       <h3>You found an egg!</h3>
-      <small>(yours wont spin like this)</small>
+      <small>(Yours wont spin like this)</small>
       <img
         src="./images/egg.gif"
         alt="Rotating Egg"
         width="250"
         height="auto"
       />
-      <form>
+      <form id="egg-form">
         <label for="lname">Put your Eth address here to receive it:</label>
         <br />
         <input
