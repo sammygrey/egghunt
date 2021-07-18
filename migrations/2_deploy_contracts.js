@@ -1,5 +1,5 @@
 const EggContract = artifacts.require("EggContract");
 
-module.export = function (deployer) {
+module.exports = function (deployer) {
   deployer.deploy(EggContract);
 };
