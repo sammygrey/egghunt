@@ -32,7 +32,7 @@ const App = {
         };
 
         if (address.length != 42){
-            this.messageDisplay('Please enter a valid Ethereum address.');
+            this.messageDisplay('<img src="deny.png"> Please enter a valid Ethereum address.');
             return;
         }
 
@@ -43,7 +43,7 @@ const App = {
             data: JSON.stringify(metadata),
         };
 
-        this.messageDisplay("Catching egg... It's a fiesty one!");
+        this.messageDisplay(`<img src="catching.png"> Catching egg... It's a fiesty one!`);
         const result = await fleek.upload(uploadMetadata);
         await this.awardItem(address, result.publicUrl);
     },
@@ -53,7 +53,7 @@ const App = {
 
         let id = await this.eggContract.methods.awardItem(address, metadataURL).send({ from: this.account });
 
-        this.messageDisplay(`Egg caught! View the metadata <a href="${metadataURL}" target="_blank">here</a>.`);
+        this.messageDisplay(`<img src="confirm.png"> Egg caught! View the metadata <a href="${metadataURL}" target="_blank">here</a>.`);
         this.refreshBalance()
     },
 

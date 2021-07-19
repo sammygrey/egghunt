@@ -16,7 +16,10 @@ module.exports = {
         {from: "./app/public/images/egg.gif", to: "egg.gif"},
         {from: "./app/public/style.css", to: "style.css"},
         {from: "./app/src/js/index.js", to: "index.js"},
-        {from: "./app/public/images/cursor.png", to: "cursor.png"}
+        {from: "./app/public/images/cursor.png", to: "cursor.png"},
+        {from: "./app/public/images/confirm.png", to: "confirm.png"},
+        {from: "./app/public/images/catching.png", to: "catching.png"},
+        {from: "./app/public/images/deny.png", to: "deny.png"}
         ]}),
         new NodePolyfillPlugin(),
     ],
