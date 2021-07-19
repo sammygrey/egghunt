@@ -31,29 +31,30 @@ const App = {
             "timestamp": new Date().toISOString()
         };
 
-        if (address.length != 42){
-            this.messageDisplay('Please enter a valid Ethereum address target="_blank">here</a>.');
-            return;
-        }
+        //if (address.length != 42){
+            //this.messageDisplay('Please enter a valid Ethereum address.');
+            //return;
+        //}
 
         const uploadMetadata = {
             apiKey: 'QDl6v8IgClEY6YogKvHohA==',
             apiSecret: '7Hz2zrHIxQ9FkzMe3CZgKUuMJwGgvoQnmVcROpSCrPw=',
-            key: `${metadata.timestamp}.json`,
+            key: `metadata/${metadata.timestamp}.json`,
             data: JSON.stringify(metadata),
         };
 
         this.messageDisplay("Catching egg... It's a fiesty one!");
         const result = await fleek.upload(uploadMetadata);
-        this.awardItem(address, result.publicUrl);
+        await this.awardItem(address, result.publicUrl);
     },
 
     awardItem: async function (address, metadataURL) {
         const { awardItem } = this.eggContract.methods;
 
-        await awardItem(address, metadataURL);
+        let id = await this.eggContract.methods.awardItem(address, metadataURL).send({ from: this.account });
 
         this.messageDisplay(`Egg caught! View the metadata <a href="${metadataURL}" target="_blank">here</a>.`);
+        this.refreshBalance()
     },
 
     messageDisplay: function (message) {
@@ -80,7 +81,6 @@ $(document).ready(function () {
     $("#egg-form").submit(function (e) {
         // Prevent page refresh - good cuz we want egg finding popup to stay up until egg is found
         e.preventDefault();
-        
         const address = $("#address").val();
         const egg = 'https://ipfs.io/ipfs/QmW2ndHEWzS4MKogBaEjRxDNeNDqKjxxeqUFJQ6e5Jpmhr?filename=egg.png'
         const serial = 0

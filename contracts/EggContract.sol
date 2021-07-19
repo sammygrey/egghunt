@@ -10,6 +10,7 @@ contract EggContract is ERC721URIStorage {
     Counters.Counter private _tokenIds;
 
     constructor() public ERC721("Egg", "EGG") {
+        
     }
 
     function awardItem(address recipient, string memory metadata)

@@ -18,9 +18,12 @@
     "@truffle/hdwallet-provider": "^1.2.3",
     "copy-webpack-plugin": "^9.0.1",
     "dotenv": "^10.0.0",
+    "eth-gas-reporter": "^0.2.22",
     "node-polyfill-webpack-plugin": "^1.1.4",
+    "solidity-string-utils": "0.0.7",
     "truffle-default-builder": "^2.0.0",
-    "web3": "^1.4.0"
+    "web3": "^1.4.0",
+    "zeppelin-solidity": "^1.12.0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
