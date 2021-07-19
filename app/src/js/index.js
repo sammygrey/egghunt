@@ -31,10 +31,10 @@ const App = {
             "timestamp": new Date().toISOString()
         };
 
-        //if (address.length != 42){
-            //this.messageDisplay('Please enter a valid Ethereum address.');
-            //return;
-        //}
+        if (address.length != 42){
+            this.messageDisplay('Please enter a valid Ethereum address.');
+            return;
+        }
 
         const uploadMetadata = {
             apiKey: 'QDl6v8IgClEY6YogKvHohA==',
